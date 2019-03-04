@@ -1,0 +1,16 @@
+
+DROP TABLE IF EXISTS `DEPARTMENT`;
+CREATE TABLE `DEPARTMENT` (
+`id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+`dept_name` VARCHAR(125)
+)engine=innodb default charset=utf8;
+
+DROP TABLE IF EXISTS `EMPLOYEE`;
+CREATE TABLE `EMPLOYEE` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY ,
+  `last_name` VARCHAR(125),
+  `email` VARCHAR(125),
+  `department_id` INT UNSIGNED NOT NULL,
+  FOREIGN KEY (`department_id`)
+    REFERENCES DEPARTMENT(`id`)
+)engine=innodb default charset=utf8;
